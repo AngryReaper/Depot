@@ -1,5 +1,5 @@
 <% if notice %>
 <p id="notice"><%= notice %></p>
 <% end %>
-<%= render @cart %>
+<%= render :partial => 'cart', :locals => { :cart => @cart} %>
 <%= link_to 'Back', carts_path %>
