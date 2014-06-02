@@ -12,6 +12,7 @@ class SessionsController < ApplicationController
   		redirect_to login_url, alert: "Неверный логин или пароль"
   	end
   end
+  
 
   def destroy
   		session[:user_id] = nil
