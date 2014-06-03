@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Книжный онлайн магазин</title>
+  <title>Books Online Store</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body class='<%= controller.controller_name %>'>
 	<div id="banner">
+		<%= form_tag store_path, class: 'locale' do %>
+		<%= select_tag 'set_locale', options_for_select(LANGUAGES, I18n.locale.to_s),	onchange: 'this.form.submit()' %>
+		<%= submit_tag 'submit' %>
+		<%= javascript_tag "$('.locale input').hide()" %>
+		<% end %>
 		<%= image_tag("logo.jpg") %>
-		<%= @page_title || "Книжная полка" %>
+		<%= @page_title || t('.title') %>
 	</div>
 	<div id="columns">
 		<div id="side">
@@ -21,13 +26,13 @@
 				<% end %>
 			</div>
 			<ul>
-				<li><%= link_to 'Авторизация', login_path %></li>
+				<li><%= link_to t('.authorize'), login_path %></li>
 			</ul>
 			<ul>
-				<li><a href="http://www....">Главная</a></li>
-				<li><a href="http://www..../faq">Вопросы</a></li>
-				<li><a href="http://www..../news">Новости</a></li>
-				<li><a href="http://www..../contact">Контакты</a></li>
+				<li><a href="http://www...."><%= t('.home') %></a></li>
+				<li><a href="http://www..../faq"><%= t('.questions')%></a></li>
+				<li><a href="http://www..../news"><%= t('.news') %></a></li>
+				<li><a href="http://www..../contact"><%= t('.contact')%></a></li>
 			</ul>
 
 			<% if session[:user_id] %>

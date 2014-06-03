@@ -1,4 +1,4 @@
-<h1>Список товаров</h1>
+<h1>Listing products</h1>
 
 <table>
   
@@ -12,9 +12,9 @@
           </dl>
         </td>
         <td class="list_actions">
-          <%= link_to 'Показать', product %><br/>
-          <%= link_to 'Изменить', edit_product_path(product) %><br/>
-          <%= link_to 'Удалить', product, method: :delete, data: { confirm: 'Вы уверены?' } %>
+          <%= link_to 'Show', product %><br/>
+          <%= link_to 'Edit', edit_product_path(product) %><br/>
+          <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
       </tr>
     <% end %>
@@ -22,4 +22,4 @@
 
 <br>
 
-<%= link_to 'Новый товар', new_product_path %>
+<%= link_to 'New product', new_product_path %>

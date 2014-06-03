@@ -1,0 +1,10 @@
+ru:
+  #hello: "Hello world"
+  layouts:
+    application:
+      title: "Книжная полка"
+      authorize: "Авторизация"
+      home: "Главная"
+      questions: "Вопросы"
+      news: "Новости"
+      contact: "Контакты"

@@ -20,4 +20,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  #hello: "Hello world"
+  layouts:
+    application:
+      title: "Bookshelf"
+      authorize: "Authorization"
+      home: "Home"
+      questions: "Questions"
+      news: "News"
+      contact: "Contacts"
