@@ -28,4 +28,4 @@ test:
 
 production:
   <<: *default
-  database: db/development
+  database: db/production

@@ -1,17 +1,17 @@
 require 'bundler/capistrano'
 # be sure to change these
 set :user, 'username'
-set :domain, 'www.depot.com'
+set :domain, '192.168.1.33'
 set :application, 'depot'
 
 # adjust if you are using RVM, remove if you are not
 set :rvm_type, :user
-set :rvm_ruby_string, 'ruby-2.0.0-p451'
+set :rvm_ruby_string, 'ruby-2.0.0-p481'
 require 'rvm/capistrano'
 
 # file paths
 set :repository, "#{user}@#{domain}:git/#{application}.git"
-set :deploy_to, "/var/www/#{application}"
+set :deploy_to, "/home/username/ror/#{application}"
 
 # set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
@@ -50,7 +50,7 @@ namespace :deploy do
 
     desc "reload the database with seed data"
     task :seed do
-        run "cd #{current_path}; rake db:seed RAILS_ENV=#{rails_env}"
+        run "cd /home/username/ror/depot; rake db:seed RAILS_ENV=#{rails_env}"
     end
 end
 
